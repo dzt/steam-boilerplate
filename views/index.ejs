@@ -1,0 +1,12 @@
+<% if (!user) { %>
+	<br>
+	<br>
+	<br>
+	<center><h2>Welcome! Please log in.</h2></center>
+<% } else { %>
+	<br>
+	<br>
+	<br>
+	<center><h2>Hello, <%= user.displayName %>.</h2></center>
+	<center><p>Check out your account information</p><a href="/account">Here</a></p></center>
+<% } %>
