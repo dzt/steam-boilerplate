@@ -1,10 +1,23 @@
-<center>
 <br>
 <br>
 <br>
 <br>
-  <center><img src="<%= user._json.avatarfull %>" alt="..." class="img-circle"></center>
-  <center><h3>Steam Name: <%= user.displayName %></h3></center>
-  <center><h3>Steam ID: <%= user.identifier %></h3></center>
-  <center><h3>Steam URL: <%= user._json.profileurl %></h3></center>
-  <center><h3>Visibility State: <%= user._json.timecreated %></h3></center>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<center><img src="<%= user._json.avatarfull %>" alt="..." class="img-circle"></center>
+</div>
+<div class="col-md-8">
+<h1><%= user.displayName %></h1>
+<h4>Location: <%= user._json.locstatecode %></h4>
+<a href="<%= user._json.profileurl %></h3>">Steam URL</a>
+<br>
+<br>
+Account Creation Date: &nbsp; <%= new Date(user._json.timecreated * 1000) %>
+<br>
+<br>
+Steam ID: &nbsp; <%= user._json.steamid %>
+<h5>Status:
+
+<% if (user._json.personastate == 1) { %> <strong class="text-success"> Online </strong> <% } %>
+</h5>
